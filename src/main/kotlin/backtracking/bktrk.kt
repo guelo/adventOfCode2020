@@ -24,10 +24,10 @@ class Permute(private val n: Int) {
 			return
 		}
 
-		for (i in k until n) {
-			exch(k, i)
+		(k until n).forEach{
+			exch(k, it)
 			enumerate(k + 1)
-			exch(i, k)
+			exch(it, k)
 		}
 	}
 
