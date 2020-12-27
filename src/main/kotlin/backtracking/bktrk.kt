@@ -46,9 +46,11 @@ class Permute(private val n: Int) {
 
 class BinaryCounter(private val n: Int) {
 	private val a = IntArray(n)
+	private val list = mutableListOf<IntArray>()
 
-	fun enumerate() {
+	fun enumerate(): List<IntArray> {
 		enumerate(0)
+		return list
 	}
 
 	private fun enumerate(k: Int) {
@@ -64,7 +66,7 @@ class BinaryCounter(private val n: Int) {
 	}
 
 	private fun process() {
-		println(a.contentToString())
+		list.add(a.clone())
 	}
 }
 
